@@ -8,12 +8,6 @@ from flask import Flask
 from flask import render_template
 app = Flask(__name__)
 
-
-@app.route('/main/')
-def master():
-    return render_template('main.html')
-
-
 @app.route('/clothes/')
 def clothes():
     return render_template('clothes.html')
