@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+School
+{% endblock %}
+
+{% block content %}
+    <h2>Performance list</h2>
+    <div class="row">
+        {% for item in school %}
+            <p class="col-12 col-md-6">Id: {{ item.student_id }}<br>Student: {{ item.student.last_name }}
+                {{ item.student.first_name }}<br>Group: {{ item.student.group }}<br>
+            Email: {{ item.student.email }}<br>Subject: {{ item.subject_name }}<br>Marks: {{ item.mark }}
+        {% endfor %}
+    </div>
+{% endblock %}
+
