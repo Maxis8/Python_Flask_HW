@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+</head>
+<body>
+<div style="width: 50%; margin: 0 auto; text-align: center;">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-lg-6 col-md-8 mx-auto">
+             <img class="rounded-img"
+               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJJOrDwIeuCxWS_h6FQSuo-g0YO4f-tkgo4w&usqp=CAU"
+                     alt="Don"/>
+                <h1 class="fw-light">Users data base</h1>
+                <table>
+                    {% if not users %}
+                    <p><b>No users</b></p>
+                    {% else %}
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Password</th>
+                    </tr>
+                    {% for user in users %}
+                    <tr>
+                        <td>{{ user.id_ }}</td>
+                        <td>{{ user.name }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.password }}</td>
+                    </tr>
+                    {% endfor %}
+                    {% endif %}
+                </table>
+                <a href="/form">
+                    <button>Add user</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
